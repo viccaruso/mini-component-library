@@ -21,12 +21,16 @@ const Select = ({ label, value, onChange, children }) => {
 const Wrapper = styled.div`
    {
     position: relative;
+    width: max-content;
   }
 `;
 
 const Presentation = styled.div`
    {
-    background-color: red;
+    color: ${COLORS.gray700};
+    background-color: ${COLORS.transparentGray15};
+    padding: 12px 16px;
+    font-size: ${16 / 16}rem;
   }
 `;
 
