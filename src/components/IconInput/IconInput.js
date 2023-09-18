@@ -6,12 +6,12 @@ import { COLORS } from '../../constants';
 import Icon from '../Icon';
 import VisuallyHidden from '../VisuallyHidden';
 
-const IconInput = ({ label, icon, width = 250, size, placeholder }) => {
+const IconInput = ({ label, icon, width = 250, size, ...delegated }) => {
   return (
     <Wrapper>
       <VisuallyHidden>{label}</VisuallyHidden>
       <Icon id={icon} />
-      <input />
+      <TextInput {...delegated} />
     </Wrapper>
   );
 };
@@ -19,6 +19,14 @@ const IconInput = ({ label, icon, width = 250, size, placeholder }) => {
 const Wrapper = styled.label`
    {
     display: block;
+  }
+`;
+
+const TextInput = styled.input`
+   {
+    height: ${24 / 16}rem;
+    border: none;
+    border-bottom: 1px solid ${COLORS.black};
   }
 `;
 
