@@ -13,7 +13,12 @@ const Select = ({ label, value, onChange, children }) => {
       <NativeSelect value={value} onChange={onChange}>
         {children}
       </NativeSelect>
-      <Presentation>Hello world</Presentation>
+      <Presentation>
+        Hello world{' '}
+        <IconWrapper style={{ '--size': 24 + 'px' }}>
+          <Icon id={'chevron-down'} size={24} strokeWidth={1} />
+        </IconWrapper>
+      </Presentation>
     </Wrapper>
   );
 };
@@ -31,6 +36,7 @@ const Presentation = styled.div`
     background-color: ${COLORS.transparentGray15};
     padding: 12px 16px;
     font-size: ${16 / 16}rem;
+    padding-right: 52px;
   }
 `;
 
@@ -42,6 +48,18 @@ const NativeSelect = styled.select`
     width: 100%;
     height: 100%;
     opacity: 0;
+  }
+`;
+
+const IconWrapper = styled.div`
+   {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 10px;
+    margin: auto;
+    width: var(--size);
+    height: var(--size);
   }
 `;
 
